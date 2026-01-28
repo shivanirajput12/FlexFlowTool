@@ -4,6 +4,8 @@ const cors = require("cors");
 const authRoutes = require("./routes/auth.routes");
 const projectRoutes = require("./routes/project.routes");
 const bugRoutes = require("./routes/bug.routes");
+const commentRoutes = require("./routes/comment.routes");
+
 
 
 const app = express();
@@ -16,6 +18,8 @@ app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/projects", projectRoutes);
 app.use("/api/bugs", bugRoutes);
+app.use("/api/comments", commentRoutes);
+
 
 app.get("/", (req, res) => {
   res.send("API Running");
